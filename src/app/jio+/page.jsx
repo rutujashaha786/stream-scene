@@ -16,13 +16,13 @@ export default async function JioPlusPage() {
             href={`jio+/watch?id=${video.id}`}
             className="relative flex items-center justify-center"
           >
-            <Image
+            <img
               src={API_BASE_URL + `/video/thumbnail?videoId=${video.id}`}
               alt=""
               width={200}
               height={300}
               className="min-w-[200px] h-[300px] rounded-lg object-cover"
-              quality={30}
+              crossOrigin="anonymous"
             />
             <PlayCircleIcon className="absolute" />
           </Link>
