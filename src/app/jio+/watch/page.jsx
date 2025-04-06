@@ -6,9 +6,11 @@ import { cn } from "@/lib/utils";
 import { FolderLockIcon } from "lucide-react";
 import Link from "next/link";
 import { useSelector } from "react-redux";
+import { useSearchParams } from "next/navigation";
 
-const JioPlusWatchPage = ({ searchParams }) => {
-  const videoId = searchParams.id;
+const JioPlusWatchPage = () => {
+  const searchParams = useSearchParams();
+  const videoId = searchParams.get("id");
   const userData = useSelector((state) => state.user);
 
   if (!userData.isLoggedIn) {
