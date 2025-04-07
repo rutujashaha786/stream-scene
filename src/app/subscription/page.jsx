@@ -9,6 +9,7 @@ import { api, ENDPOINT } from "@/lib/api"
 import { useDispatch, useSelector } from "react-redux"
 import { useRouter } from "next/navigation"
 import { updateUserPremium } from "@/redux/userSlice"
+import { useRazorpay } from "react-razorpay";
 
 const offers = [
   {
@@ -36,28 +37,13 @@ const offers = [
 
 const SubscriptionPage = () => {
   const [activePrice, setActivePrice] = useState("");
-  const [loading, setLoading] = useState(false)
-  const userData = useSelector(state => state.user)
-  const dispatch = useDispatch()
-  const router = useRouter()
+  const [loading, setLoading] = useState(false);
+  const userData = useSelector(state => state.user);
+  const dispatch = useDispatch();
+  const router = useRouter();
+  const { Razorpay } = useRazorpay();
 
-  function loadCheckoutScript() {
-    return new Promise(function(resolve, reject){
-      const script = document.createElement("script");
-      script.src = "https://checkout.razorpay.com/v1/checkout.js";
-
-      script.onload = () => {
-        resolve();
-      }
-
-      script.onerror = () => {
-        reject();
-      }
-      document.body.appendChild(script);
-    })
-}
-
-const handlePaymentClick = async () => {
+ const handlePaymentClick = async () => {
     setLoading(true);
     
     try {
@@ -80,8 +66,6 @@ const handlePaymentClick = async () => {
         email: userData.user?.email,
         amount: activePrice 
       })
-
-      await loadCheckoutScript();
 
       const options = {
         key: process.env.NEXT_PUBLIC_KEY_ID ?? "",
@@ -168,6 +152,7 @@ const handlePaymentClick = async () => {
           <button
             className="bg-pink-600 p-3 md:mt-10 flex font-medium rounded-lg"
             onClick={handlePaymentClick}
+            disabled={loading}
           >
             Continue & Pay
             {loading && <LucideLoader2 className="animate-spin ml-2 w-4 h-4" />}
