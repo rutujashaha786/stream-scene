@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ChevronRightIcon, ExternalLinkIcon } from "lucide-react";
-import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet";
+import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "../ui/sheet";
 import { navLinks } from "../section/Header";
 import { useRouter } from "next/navigation";
 import { useSelector, useDispatch } from "react-redux";
 import { userLoggedOutDetails } from "@/redux/userSlice";
 import { api, ENDPOINT } from "@/lib/api";
+import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 
 const ProfileSheet = () => {
     const [open, setOpen] = useState(false); //manually control over open/close state
@@ -45,6 +46,9 @@ const ProfileSheet = () => {
                     )}
             </SheetTrigger>
             <SheetContent side={"right"} className="px-6">
+                <SheetTitle>
+                    <VisuallyHidden>Profile</VisuallyHidden>
+                </SheetTitle>
                 <div className="bg-slate-700/30 p-6 flex flex-col items-center gap-2 mt-[100px] rounded-lg">
                     {!userData.isLoggedIn ? (
                         <Image
