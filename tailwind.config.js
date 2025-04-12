@@ -50,6 +50,5 @@ module.exports = {
   		}
   	}
   },
-  safelist: ['scrollbar-hide'],
   plugins: [require("tailwindcss-animate"), require("tailwind-scrollbar-hide")],
 };
