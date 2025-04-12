@@ -11,7 +11,7 @@ export const navLinks = [
   { name: "Movies", key: "movies", href: "/movies" },
   { name: "Tv Shows", key: "tv", href: "/tv" },
   { name: "Watchlist", key: "watchlist", href: "/watchlist" },
-  { name: "Jio+", key: "jio+", href: "/jio+" },
+  { name: "Stream+", key: "stream+", href: "/stream+" },
 ];
 
 export default function Header() {
@@ -23,15 +23,19 @@ export default function Header() {
     <header className="bg-[#0d0e10] py-4 w-full fixed top-0 z-50 border-b-2 border-b-grey">
       <div className="lg:mx-auto mx-2 lg:px-4 flex items-center text-nowrap">
         <div className="flex">
-          <Link href="/">
+          
+        <div className="flex items-center">
+          <Link href="/" className="flex items-center gap-1">
             <Image
-              src="/logo.svg"
-              alt="JioCinema Logo"
-              width={136}
+              src="/icon.svg"
+              alt="StreamScene Logo"
+              width={36}
               height={36}
-              className="md:h-9 md:max-w-[136px] max-w-24"
+              className="md:h-9 md:max-w-[36px] max-w-6"
             />
+            <h1 className="text-xs md:text-xl font-bold">StreamScene</h1>
           </Link>
+        </div>
 
           <Link
             href="/subscription"

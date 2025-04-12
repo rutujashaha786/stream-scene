@@ -49,7 +49,7 @@ const SubscriptionPage = () => {
     try {
 
       if (userData.user?.isPremium) {
-        toast("Looks like you're already a JioCinema Premium member!");
+        toast("Looks like you're already a StreamScene Premium member!");
         return;
       }
       if (activePrice === "") {
@@ -71,8 +71,8 @@ const SubscriptionPage = () => {
         key: process.env.NEXT_PUBLIC_KEY_ID ?? "",
         amount: res.data.amount,
         currency: "INR",
-        name: "Jio Corp",
-        description: "Test JIO CINEMA Transaction",
+        name: "StreamScene Corp",
+        description: "Test StreamScene Transaction",
         order_id: res.data.orderId,
         handler: async function(response) {
           toast(`Payment Successful ${response.razorpay_order_id}`);
@@ -125,9 +125,9 @@ const SubscriptionPage = () => {
         </div>
 
         <div className="md:mx-16">
-          <h2 className="text-2xl font-black">{userData?.user?.isPremium && "✅ You are subscribed to JioCinema Premium."}<br/><br/></h2>
+          <h2 className="text-2xl font-black">{userData?.user?.isPremium && "✅ You are subscribed to StreamScene Premium."}<br/><br/></h2>
           <h1 className="md:text-4xl text-2xl font-black mb-4">
-            JioCinema Premium
+            StreamScene Premium
           </h1>
           <p className="text-lg mb-8 w-[70%] text-wrap hidden md:block">
             Entertainment Redefined - The best of Hollywood, Before TV

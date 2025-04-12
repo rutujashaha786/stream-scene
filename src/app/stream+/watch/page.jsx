@@ -8,7 +8,7 @@ import Link from "next/link";
 import { useSelector } from "react-redux";
 import { useSearchParams } from "next/navigation";
 
-const JioPlusWatchPage = () => {
+const StreamPlusWatchPage = () => {
   const searchParams = useSearchParams();
   const videoId = searchParams.get("id");
   const userData = useSelector((state) => state.user);
@@ -57,4 +57,4 @@ const JioPlusWatchPage = () => {
   );
 };
 
-export default JioPlusWatchPage;
+export default StreamPlusWatchPage;

@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const headings = [
     {
-        title: "JioCinema",
+        title: "StreamScene",
         links: ["For You", "Sports", "Movies", "TV Shows"],
     },
     {
@@ -112,8 +112,8 @@ export default function Footer() {
                         Copyright © 2025 Viacom18 Media PVT LTD. All rights reserved.
                     </p>
                     <Image
-                        src="/jio-logo.png"
-                        alt="Jio Logo"
+                        src="/icon.svg"
+                        alt="StreamScene Logo"
                         width={48}
                         height={48}
                         className="md:h-12 md:w-12 h-10 w-10"

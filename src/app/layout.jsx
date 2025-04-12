@@ -8,7 +8,7 @@ import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Stream Scene",
+  title: "StreamScene",
   description: "Stream Scene is an educational project inspired by JioCinema, showcasing a streaming platform with movies, TV shows, and Watchlist features. Built using Next.js for learning purposes only.",
 };
 
