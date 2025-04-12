@@ -105,7 +105,7 @@ const SubscriptionPage = () => {
 }
 
   return (
-    <div className="h-screen mt-[74px] w-full">
+    <div className="min-h-screen mt-[74px] w-full flex flex-col justify-between">
       <Image
         src="/motu-patlu.png"
         alt="Background Image"

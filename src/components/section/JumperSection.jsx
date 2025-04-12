@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 function JumperSection({ list }) {
   return (
-    <div className="p-6 flex gap-4 mt-[64px] overflow-scroll scrollbar-hide" >
+    <div className="p-6 flex gap-4 mt-[64px] text-nowrap overflow-scroll scrollbar-hide" >
     {
         list.map((item) => (<Link
             key={item.href}

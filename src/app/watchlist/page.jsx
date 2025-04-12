@@ -36,6 +36,7 @@ function WatchList() {
 
 
     const title = "Watchlist"
+    const id = "watchlistheading"
     return (
         <div className="mt-[80px] p-4">
             {userData.isLoggedIn ? (
@@ -43,10 +44,15 @@ function WatchList() {
                     <CategoriesSection
                         fetcher={fetcher}
                         title={title}
-                        id="watchlistheading"
+                        id={id}
                     />
-                ) : (
-                    <CategoriesFallback /> 
+                ) : ( 
+                    <div className="py-8 px-6">
+                        <h2 id={id} className="text-2xl font-medium mb-6 scroll-m-[100px]">
+                            {title}
+                        </h2>
+                        <CategoriesFallback />
+                    </div> 
                 )
             ) : <div className="flex flex-col items-center justify-center h-[90vh] w-full gap-4">
                 <FolderLockIcon
