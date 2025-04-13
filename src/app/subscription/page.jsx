@@ -71,8 +71,8 @@ const SubscriptionPage = () => {
         key: process.env.NEXT_PUBLIC_KEY_ID ?? "",
         amount: res.data.amount,
         currency: "INR",
-        name: "StreamScene Corp",
-        description: "Test StreamScene Transaction",
+        name: "Jio Corp",
+        description: "Test JIO CINEMA Transaction",
         order_id: res.data.orderId,
         handler: async function(response) {
           toast(`Payment Successful ${response.razorpay_order_id}`);
