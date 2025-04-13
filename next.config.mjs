@@ -12,15 +12,7 @@ const nextConfig = {
                 hostname: "api.streamscene.stream"
             }
         ]
-    },
-    async rewrites() {
-        return [
-          {
-            source: "/api/:path*", // frontend route
-            destination: "https://api.streamscene.stream/api/:path*", // backend route
-          },
-        ];
-      },
+    }
 };
 
 export default nextConfig;
