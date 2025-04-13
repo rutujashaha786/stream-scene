@@ -9,10 +9,18 @@ const nextConfig = {
                 hostname: "localhost"
             },
             {
-                hostname: "https://stream-scene-backend.onrender.com/"
+                hostname: "api.streamscene.stream"
             }
         ]
-    }
+    },
+    async rewrites() {
+        return [
+          {
+            source: "/api/:path*", // frontend route
+            destination: "https://api.streamscene.stream/api/:path*", // backend route
+          },
+        ];
+      },
 };
 
 export default nextConfig;
