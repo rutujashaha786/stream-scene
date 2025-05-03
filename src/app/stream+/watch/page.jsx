@@ -7,6 +7,7 @@ import { FolderLockIcon } from "lucide-react";
 import Link from "next/link";
 import { useSelector } from "react-redux";
 import { useSearchParams } from "next/navigation";
+import { FilmIcon } from "lucide-react";
 
 const StreamPlusWatchPage = () => {
   const searchParams = useSearchParams();
@@ -44,7 +45,7 @@ const StreamPlusWatchPage = () => {
     );
   }
 
-  return (
+  return videoId ? (
     <video
       src={API_BASE_URL + `/video/watch?id=${videoId}`}
       controls
@@ -54,7 +55,16 @@ const StreamPlusWatchPage = () => {
       // crossOrigin is needed to handle CORS for video resources from a different domain
       crossOrigin="anonymous"
     />
+  ) : (
+    <div className="w-full h-[60vh] flex flex-col gap-4 items-center justify-center text-slate-400">
+      <FilmIcon className="w-[100px] h-[100px]" />
+      <p>Uh Oh! Video is unavailable.</p>
+      <Link href="/" className={buttonVariants()}>
+        Take me Home
+      </Link>
+    </div>
   );
+
 };
 
 export default StreamPlusWatchPage;
