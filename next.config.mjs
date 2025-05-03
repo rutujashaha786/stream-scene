@@ -12,7 +12,8 @@ const nextConfig = {
                 hostname: "api.streamscene.stream"
             }
         ]
-    }
+    },
+    swcMinify: true
 };
 
 export default nextConfig;
