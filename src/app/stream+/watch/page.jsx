@@ -14,6 +14,16 @@ const StreamPlusWatchPage = () => {
   const videoId = searchParams.get("id");
   const userData = useSelector((state) => state.user);
 
+  const isSafari = () => /safari/.test(navigator.userAgent.toLowerCase()) && !/chrome/.test(navigator.userAgent.toLowerCase());
+
+  if (isSafari()) {
+    return (
+      <div className="w-full h-screen flex flex-col items-center justify-center text-white bg-black text-xl">
+        <p>Streaming is not supported in Safari. Please use a different browser.</p>
+      </div>
+    );
+  }
+
   if (!userData.isLoggedIn) {
     return (
       <div className="flex flex-col items-center justify-center h-screen w-full gap-4">
