@@ -14,12 +14,28 @@ const StreamPlusWatchPage = () => {
   const videoId = searchParams.get("id");
   const userData = useSelector((state) => state.user);
 
-  const isSafari = () => /safari/.test(navigator.userAgent.toLowerCase()) && !/chrome/.test(navigator.userAgent.toLowerCase());
+  const isSafariOrIOS = () => {
+    if (typeof navigator === "undefined") return false;
+    const ua = navigator.userAgent;
+  
+    const isSafari =
+      /^((?!chrome|android).)*safari/i.test(ua) &&
+      !ua.includes("CriOS") &&
+      !ua.includes("FxiOS") &&
+      !ua.includes("EdgiOS");
+  
+    const isIOSDevice = /iPhone|iPad|iPod/.test(ua);
+  
+    return isSafari || isIOSDevice;
+  };
 
-  if (isSafari()) {
+  if (isSafariOrIOS()) {
     return (
-      <div className="w-full h-screen flex flex-col items-center justify-center text-white bg-black text-xl">
-        <p>Streaming is not supported in Safari. Please use a different browser.</p>
+      <div className="w-full h-screen flex flex-col items-center justify-center text-white bg-black px-6 text-center">
+        <p className="text-lg">
+          Streaming is currently not supported on Safari or iOS browsers. <br className="hidden sm:block" />
+          Please use a desktop or Android browsers for the best experience.
+        </p>
       </div>
     );
   }
@@ -46,8 +62,10 @@ const StreamPlusWatchPage = () => {
 
   if (!userData.user?.isPremium) {
     return (
-      <div className="h-screen w-screen flex justify-center items-center text-white bg-black text-xl flex-col gap-6">
-        You need premium access to watch this content.
+      <div className="h-screen w-screen flex flex-col justify-center items-center text-white bg-black gap-6 px-4 text-center">
+        <p className="text-lg">
+          You need premium access to watch this content.
+        </p>
         <Link href="/subscription" className={buttonVariants()}>
           Buy Premium
         </Link>
