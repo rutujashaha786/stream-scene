@@ -8,6 +8,7 @@ import Link from "next/link";
 import { useSelector } from "react-redux";
 import { useSearchParams } from "next/navigation";
 import { FilmIcon } from "lucide-react";
+import { useEffect } from "react";
 
 const StreamPlusWatchPage = () => {
   const searchParams = useSearchParams();
@@ -39,6 +40,18 @@ const StreamPlusWatchPage = () => {
       </div>
     );
   }
+
+  useEffect(() => {
+    const setViewportHeight = () => {
+      const vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty("--vh", `${vh}px`);
+    };
+
+    setViewportHeight();
+    window.addEventListener("resize", setViewportHeight);
+
+    return () => window.removeEventListener("resize", setViewportHeight);
+  }, []);
 
   if (!userData.isLoggedIn) {
     return (
@@ -74,15 +87,17 @@ const StreamPlusWatchPage = () => {
   }
 
   return videoId ? (
-    <video
-      src={API_BASE_URL + `/video/watch?id=${videoId}`}
-      controls
-      autoPlay
-      muted
-      className="w-screen h-screen"
-      // crossOrigin is needed to handle CORS for video resources from a different domain
-      crossOrigin="anonymous"
-    />
+    <div className="video-container bg-black">
+      <video
+        src={API_BASE_URL + `/video/watch?id=${videoId}`}
+        controls
+        autoPlay
+        muted
+        playsInline
+        className="w-full h-full"
+        crossOrigin="anonymous"
+      />
+    </div>
   ) : (
     <div className="w-full h-[60vh] flex flex-col gap-4 items-center justify-center text-slate-400">
       <FilmIcon className="w-[100px] h-[100px]" />
