@@ -30,16 +30,16 @@ const StreamPlusWatchPage = () => {
     return isSafari || isIOSDevice;
   };
 
-  if (isSafariOrIOS()) {
-    return (
-      <div className="w-full h-screen flex flex-col items-center justify-center text-white bg-black px-6 text-center">
-        <p className="text-lg">
-          Streaming is currently not supported on Safari or iOS browsers. <br className="hidden sm:block" />
-          Please use a desktop or Android browsers for the best experience.
-        </p>
-      </div>
-    );
-  }
+  // if (isSafariOrIOS()) {
+  //   return (
+  //     <div className="w-full h-screen flex flex-col items-center justify-center text-white bg-black px-6 text-center">
+  //       <p className="text-lg">
+  //         Streaming is currently not supported on Safari or iOS browsers. <br className="hidden sm:block" />
+  //         Please use a desktop or Android browsers for the best experience.
+  //       </p>
+  //     </div>
+  //   );
+  // }
 
   useEffect(() => {
     const setViewportHeight = () => {
