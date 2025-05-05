@@ -4,6 +4,7 @@ import StoreProvider from "@/providers/StoreProvider";
 import AuthProvider from "@/providers/AuthProvider";
 import { Toaster } from "@/components/ui/sonner"
 import "./globals.css";
+import DeviceDetect from "@/components/atom/DeviceDetect";
 import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,12 +18,14 @@ export default function RootLayout({ children }) {
     <html lang="en" className="scroll-smooth">
       <body className={`${inter.className} antialiased`}>
         <StoreProvider>
-        <AuthProvider>
-          <Header></Header>
-            {children}
-          <Footer></Footer>
-          <Toaster />
-        </AuthProvider>
+          <AuthProvider>
+            <DeviceDetect>
+              <Header />
+              {children}
+              <Footer />
+              <Toaster />
+            </DeviceDetect>
+          </AuthProvider>
         </StoreProvider>
       </body>
     </html>
