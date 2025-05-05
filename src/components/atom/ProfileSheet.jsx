@@ -45,7 +45,7 @@ const ProfileSheet = () => {
                     </div>
                     )}
             </SheetTrigger>
-            <SheetContent side={"right"} className="px-6">
+            <SheetContent side={"right"} className="px-6 py-4 overflow-y-auto max-h-screen">
                 <SheetTitle>
                     <VisuallyHidden>Profile</VisuallyHidden>
                 </SheetTitle>
