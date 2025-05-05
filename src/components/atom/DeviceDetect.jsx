@@ -6,11 +6,15 @@ export default function DeviceDetect({ children }) {
   const [isBlocked, setIsBlocked] = useState(false);
 
   useEffect(() => {
-    const ua = navigator.userAgent;
-    const isIOSDevice = /iPhone|iPad|iPod/.test(ua);
-    
-    if (isIOSDevice) {
-      setIsBlocked(true); 
+    const isIOSDevice = () => {
+      const userAgentCheck = /iPad|iPhone|iPod/i.test(navigator.userAgent);
+      const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0 || window.matchMedia('(pointer: coarse)').matches;
+
+      return (userAgentCheck || navigator.userAgent.includes("Macintosh") && isTouchDevice)
+    };
+  
+    if (isIOSDevice()) {
+      setIsBlocked(true);
     }
   }, []);
 
