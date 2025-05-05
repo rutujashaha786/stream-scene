@@ -19,12 +19,12 @@ export default function RootLayout({ children }) {
       <body className={`${inter.className} antialiased`}>
         <StoreProvider>
           <AuthProvider>
-            <DeviceDetect>
+            {/* <DeviceDetect> */}
               <Header />
               {children}
               <Footer />
               <Toaster />
-            </DeviceDetect>
+            {/* </DeviceDetect> */}
           </AuthProvider>
         </StoreProvider>
       </body>
