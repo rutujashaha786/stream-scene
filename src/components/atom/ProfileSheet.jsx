@@ -63,7 +63,7 @@ const ProfileSheet = () => {
                         {userData.user ? userData.user.name.charAt(0).toUpperCase() : ""}
                     </div>
                     )}
-                    <p className="text-xl font-bold capitalize">
+                    <p className="text-base sm:text-sm text-center font-semibold capitalize break-words max-w-[90vw]">
                         {userData.isLoggedIn ? userData.user.name : "Guest"}
                     </p>
                     {!userData.isLoggedIn ? (
