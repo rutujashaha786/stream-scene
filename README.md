@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🎬 StreamScene – Movies & TV Streaming Platform
 
-## Getting Started
+StreamScene is a full-stack web application inspired by JioCinema, designed for discovering, previewing, and streaming movies and TV shows. It provides an engaging experience with curated content, personalized watchlists, and premium streaming features.
 
-First, run the development server:
+## ✨ Features
+- **Movies & TV Shows Discovery:** Fetch and categorize movies and TV shows from TMDB APIs.
+- **Watchlist & Share:** Add content to your watchlist and share content links with others.
+- **User Authentication:** Secure JWT-based Sign In, Sign Up, and Password Reset flows.
+- **Premium Streaming:** Custom video streaming for premium users with secure backend APIs.
+- **Payment Integration:** Seamless subscription purchase using Razorpay API.
+- Secure video streaming using HTTP Range Requests
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🧱 Tech Stack
+- **Frontend:** Next.js, React, Redux, TailwindCSS
+- **Backend:** Node.js, Express.js, MongoDB, Mongoose
+- **Payments:** Razorpay API
+- **External APIs:** TMDB for movie and TV show data
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📦 Repository Structure
+StreamScene is maintained using two separate repositories:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Repository	    Description
+#
+Frontend Repo	UI, user interactions, streaming experience
+Backend Repo	APIs, authentication, payments, and streaming logic
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+🔗 Frontend Repository: https://github.com/rutujashaha786/stream-scene.git
+🔗 Backend Repository: https://github.com/rutujashaha786/stream-scene-backend.git
 
-## Learn More
+## Pre-requisite - Backend Setup
+    Backend must be running locally or deployed for full functionality.
+    For running the backend server locally, follow the instructions in the README file of the repo: https://github.com/rutujashaha786/stream-scene-backend
 
-To learn more about Next.js, take a look at the following resources:
+## 📦 Frontend Setup
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. #### Clone the Repository:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+    ```bash
+    git clone https://github.com/rutujashaha786/stream-scene.git
+    cd yourprojectname
+    ``` 
+2. #### Install Dependencies:
 
-## Deploy on Vercel
+    ```bash
+    npm install (Note: Use node version >=18.20)
+    ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. #### Environment Variables:
+    Create .env file in root directory-
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+    ```bash
+    NEXT_PUBLIC_KEY_ID= <public Razorpay key>
+    NEXT_PUBLIC_API_BASE_URL= <Backend API base URL>
+    ```
+
+    ###### Example values:
+
+    - Local backend:
+        ```bash
+        http://localhost:3005/api
+        ```
+    - Deployed backend:
+        ```bash
+        https://api.streamscene.stream/api
+        ```
+4. #### Start the Server:
+
+    ```bash
+    npm run dev
+    ```
+
+    ```bash
+    Open http://localhost:3000 to view the app.
+    ```
+
+### Usage:
+- Navigate through Home, Movies, TV Shows sections.
+- Click on Stream+ videos for premium content (login & subscription required).
+- Add movies or TV shows to your Watchlist for easy access.
+- Share content links with friends via the Share button.
