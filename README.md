@@ -2,6 +2,9 @@
 
 StreamScene is a full-stack web application inspired by JioCinema, designed for discovering, previewing, and streaming movies and TV shows. It provides an engaging experience with curated content, personalized watchlists, and premium streaming features.
 
+## 🔗 Demo
+[🎥 Walkthrough](https://drive.google.com/file/d/15i0mISvJ-fF3Y-RtVSDCodGBLT8gJ3tc/view?usp=sharing ) | [🌐 Live Demo](https://stream-scene.vercel.app/ )
+
 ## ✨ Features
 - **Movies & TV Shows Discovery:** Fetch and categorize movies and TV shows from TMDB APIs.
 - **Watchlist & Share:** Add content to your watchlist and share content links with others.
