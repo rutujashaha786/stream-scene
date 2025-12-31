@@ -8,7 +8,6 @@ StreamScene is a full-stack web application inspired by JioCinema, designed for 
 - **User Authentication:** Secure JWT-based Sign In, Sign Up, and Password Reset flows.
 - **Premium Streaming:** Custom video streaming for premium users with secure backend APIs.
 - **Payment Integration:** Seamless subscription purchase using Razorpay API.
-- Secure video streaming using HTTP Range Requests
 
 ## 🧱 Tech Stack
 - **Frontend:** Next.js, React, Redux, TailwindCSS
@@ -19,17 +18,12 @@ StreamScene is a full-stack web application inspired by JioCinema, designed for 
 ## 📦 Repository Structure
 StreamScene is maintained using two separate repositories:
 
-Repository	    Description
-#
-Frontend Repo	UI, user interactions, streaming experience
-Backend Repo	APIs, authentication, payments, and streaming logic
-
-🔗 Frontend Repository: https://github.com/rutujashaha786/stream-scene.git
+🔗 Frontend Repository: https://github.com/rutujashaha786/stream-scene.git <br />
 🔗 Backend Repository: https://github.com/rutujashaha786/stream-scene-backend.git
 
 ## Pre-requisite - Backend Setup
-    Backend must be running locally or deployed for full functionality.
-    For running the backend server locally, follow the instructions in the README file of the repo: https://github.com/rutujashaha786/stream-scene-backend
+Backend must be running locally or deployed for full functionality.<br />
+For running the backend server locally, follow the instructions in the README file of the repo: https://github.com/rutujashaha786/stream-scene-backend
 
 ## 📦 Frontend Setup
 
@@ -53,7 +47,7 @@ Backend Repo	APIs, authentication, payments, and streaming logic
     NEXT_PUBLIC_API_BASE_URL= <Backend API base URL>
     ```
 
-    ###### Example values:
+    ###### Example values for Backend API base URL:
 
     - Local backend:
         ```bash
@@ -69,9 +63,7 @@ Backend Repo	APIs, authentication, payments, and streaming logic
     npm run dev
     ```
 
-    ```bash
     Open http://localhost:3000 to view the app.
-    ```
 
 ### Usage:
 - Navigate through Home, Movies, TV Shows sections.
